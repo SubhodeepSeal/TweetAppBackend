@@ -388,7 +388,7 @@ def search_by_full_username():
             user_found = User_mgmt.query.filter(User_mgmt.loginid == loginid).first()
             if user_found:
                 print(user_found.loginid)
-                return {"forgot-password":f"https://tweet-app.azurewebsites.net/tweets/{user_found.loginid}/forgot"}
+                return {"forgot-password":f"https://tweet-app.azurewebsites.net/{user_found.loginid}/forgot"}
         return {"error":"User does not exist"}
     except Exception as e:
         app.logger.error("Error Occured! \n"+e.with_traceback())
